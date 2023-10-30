@@ -24,7 +24,7 @@ jobs:
 
     - name: Build
       run: |
-        npx webpack --mode production
+        npx webpack
 
     - name: Upload to Hostinger via FTP
       env:
