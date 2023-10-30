@@ -1,0 +1,46 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build
+      run: |
+        npm install
+        npx webpack
+
+    - name: Upload to Hostinger via FTP
+      env:
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      run: |
+        echo -e "open -u $FTP_USERNAME,$FTP_PASSWORD ftp://greenlashgames.com" > lftp_commands
+        echo -e "mirror -R build" >> lftp_commands
+        echo -e "set ftp:ssl-allow no" >> lftp_commands
+        echo -e "set ftp:use-feat no" >> lftp_commands
+        echo -e "set net:reconnect-interval-base 5" >> lftp_commands
+        echo -e "set net:max-retries 2" >> lftp_commands
+        echo -e "set net:reconnect-interval-multiplier 1" >> lftp_commands
+        echo -e "set net:reconnect-interval-max 60" >> lftp_commands
+        echo -e "set net:timeout 10" >> lftp_commands
+        echo -e "set net:max-retries 1" >> lftp_commands
+
+        # Ejecutar la transferencia FTP
+        lftp -f lftp_commands
+
