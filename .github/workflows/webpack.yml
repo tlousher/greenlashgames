@@ -36,17 +36,6 @@ jobs:
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
       run: |
-        echo -e "open -u $FTP_USERNAME,$FTP_PASSWORD -p21 greenlashgames.com" > lftp_commands
-        echo -e "mirror -R dist" >> lftp_commands
-        echo -e "set ftp:ssl-allow no" >> lftp_commands
-        echo -e "set ftp:use-feat no" >> lftp_commands
-        echo -e "set net:reconnect-interval-base 5" >> lftp_commands
-        echo -e "set net:max-retries 2" >> lftp_commands
-        echo -e "set net:reconnect-interval-multiplier 1" >> lftp_commands
-        echo -e "set net:reconnect-interval-max 60" >> lftp_commands
-        echo -e "set net:timeout 9999" >> lftp_commands
-        echo -e "set net:max-retries 1" >> lftp_commands
-
-        # Ejecutar la transferencia FTP
-        lftp -f lftp_commands
+        echo "mirror -e -R dist public_html" > ftp_commands
+        lftp -u $FTP_USERNAME,$FTP_PASSWORD ftp://greenlashgames.com -e "set ftp:ssl-allow off; source ftp_commands" 
 
