@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
-    timeout-minutes: 1
+    timeout-minutes: 5
 
     steps:
     - uses: actions/checkout@v3
@@ -20,11 +20,11 @@ jobs:
 
     - name: Install
       run: |
-        npm install --legacy-peer-deps
+        npm install
 
     - name: Build
       run: |
-        npx webpack
+        npm run build
 
     - name: Instalar lftp
       run: |
@@ -36,6 +36,6 @@ jobs:
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
       run: |
-        echo "mirror -e -R dist public_html" > ftp_commands
+        echo "mirror -R build/ domains/greenlashgames.com/public_html/" > ftp_commands
         lftp -u $FTP_USERNAME,$FTP_PASSWORD ftp://greenlashgames.com -e "set ftp:ssl-allow off; source ftp_commands" 
 
