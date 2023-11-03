@@ -8,15 +8,15 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          GreenlashGames is on the way!
+          Greenlash Games is on the way!
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="http://tlousher.itch.io"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Itch.io
         </a>
       </header>
     </div>
