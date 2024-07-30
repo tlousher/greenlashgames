@@ -9,3 +9,8 @@ Greenlash Games es el corazón latente de la creatividad, donde los mundos imagi
 ## Nuestra Visión 🌟
 
 En Greenlash Games, creemos en la magia de los videojuegos para conectar a las personas. Nuestra visión es trascender el mero entretenimiento y crear experiencias que fomenten la colaboración, expandan tus horizontes y te llenen de inspiración. Cada vez que juegas uno de nuestros títulos, te embarcas en un viaje emocionante que te impulsará a conquistar nuevos desafíos. 🌠
+
+## Paquetes principales 📦
+### React-router-dom
+Se utiliza para la navegación entre páginas de la aplicación.
+Para mayor información sobre su uso y documentacion, visite [React-router-dom](https://reactrouter.com/en/main/start/tutorial)
