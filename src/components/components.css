@@ -1,0 +1,23 @@
+.top-menu {
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #003D2E;
+}
+
+.link-inactive {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.link-inactive:hover {
+    color: #FFD700;
+}
+
+.link-active {
+    color: #FFD700;
+}
+
+.link-pending {
+    color: #FFD700;
+}

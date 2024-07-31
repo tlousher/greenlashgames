@@ -9,9 +9,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #005F40;
+  /* Ocultar la barra de scroll en IE and Edge */
+  -ms-overflow-style: none;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Ocultar la barra de scroll en navegadores basados en WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ocultar la barra de scroll en Firefox */
+html {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Ocultar la barra de scroll en Internet Explorer y Edge */
+body {
 }

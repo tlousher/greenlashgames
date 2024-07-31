@@ -14,3 +14,12 @@ En Greenlash Games, creemos en la magia de los videojuegos para conectar a las p
 ### React-router-dom
 Se utiliza para la navegación entre páginas de la aplicación.
 Para mayor información sobre su uso y documentacion, visite [React-router-dom](https://reactrouter.com/en/main/start/tutorial)
+
+### Tailwindcss
+Se utiliza para el diseño y estilos de la aplicación.
+Para mayor información sobre su uso y documentacion, visite [Tailwindcss](https://tailwindcss.com/docs)
+
+### React-fullpage
+Se utiliza para la creación de secciones de pantalla completa.
+Para mayor información sobre su uso y documentacion, visite [React-fullpage](https://alvarotrigo.com/react-fullpage/)
+To Licence: [React-fullpage Licence](https://alvarotrigo.com/fullPage/pricing/)
