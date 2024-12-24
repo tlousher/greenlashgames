@@ -11,6 +11,7 @@ import './index.css';
 //</editor-fold>
 //<editor-fold desc="Routes">
 import ErrorPage from "./pages/errorPage";
+import MisteryGift from "./pages/misteryGift";
 //</editor-fold>
 
 
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <App />,
+        errorElement: <ErrorPage />,
+    },
+    {
+        path: "/misterygift",
+        element: <MisteryGift />,
         errorElement: <ErrorPage />,
     },
 ]);

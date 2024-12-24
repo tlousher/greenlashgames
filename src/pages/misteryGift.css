@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.image {
+  height: 100vh;
+  width: auto;
+  object-fit: cover;
+}
+
+.Link {
+  cursor: pointer;
+}
